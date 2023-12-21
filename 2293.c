@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-	int n, k, cnt = 0;
+	int n, k;
 	int temp;
 	scanf("%d %d", &n, &k);
 
