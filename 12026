@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+char str[1001];
+int dp[1001];
+
+int min(int a, int b) {
+    return a > b ? b : a;
+}
+
+int main() {
+    int n, index = 0;
+    int INF = 1234567890;
+    scanf("%d", &n);
+    scanf("%s", &str);
+
+    for (int i = 0; i < 1001; i++) {
+        dp[i] = INF;
+    }
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = i + 1; j <= n; j++) {
+            if (!(str[i] == 'B' && str[j] == 'O'))
+                continue;
+            else if (!(str[i] == 'O' && str[j] == 'J'))
+                continue;
+            else if (!(str[i] == 'J' && str[j] == 'B'))
+                continue;
+            
+            if (dp[j] > dp[i] + (j - i) * (j - i))
+                dp[j] = dp[i] + (j - i) * (j - i);
+
+        }
+    }
+
+    if (dp[n] == INF)
+        printf("-1\n");
+    else
+        printf("%d\n", dp[n]);
+
+    return 0;
+}
