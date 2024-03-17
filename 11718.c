@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-char arr[1000][1000];
-
 int main() {
-
-	while (scanf("%s", arr) != -1) {
-		printf("%s\n", arr);
+	char c;
+	while(scanf("%c", &c) != -1) {
+		printf("%c", c);
 	}
+
 	return 0;
 }
