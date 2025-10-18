@@ -164,7 +164,6 @@ int main()
 			}
 		}
 	}
-
 	king[0] = king_x + 'A' - 1;
 	king[1] = king_y + '0';
 	stone[0] = stone_x + 'A' - 1;
